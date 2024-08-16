@@ -51,4 +51,15 @@ router.put('tipoextintor/:id', async (req, res) => {
     }
 });
 
+<<<<<<< Updated upstream
+=======
+router.get('extintorVencido', async(req, res) =>{
+  try{
+    await extintorService.listExtintorVencimiento(req, res);
+  }catch (error) {
+    res.status(error.statusCode || 500).json({ error  : error.message });
+  }
+})
+
+>>>>>>> Stashed changes
 module.exports = router;

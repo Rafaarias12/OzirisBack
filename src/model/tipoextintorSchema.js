@@ -14,10 +14,19 @@ const tipoextintorSchema = new mongoose.Schema({
     },
     vNombre: {
         type: String,
+<<<<<<< Updated upstream
         unique: true,
         
+=======
+        ref:'nombre',
+        required: true
+>>>>>>> Stashed changes
     }
 
 });
 
+<<<<<<< Updated upstream
 const tipoExtintor = mongose.model('tipo_extintor', tipoextintorSchema);
+=======
+module.exports = mongoose.model('tipo_extintor', tipoextintorSchema);
+>>>>>>> Stashed changes

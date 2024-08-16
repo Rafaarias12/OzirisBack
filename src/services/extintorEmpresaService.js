@@ -138,11 +138,37 @@ const updateTipoExtintor =async (req, res) => {
     }
 }
 
+<<<<<<< Updated upstream
+=======
+const listExtintorVencimiento = async (req, res) =>{
+    try{
+        const fechaCorte = new Date();
+        fechaCorte.setFullYear(fechaCorte.getFullYear() - 10);
+        const extintores = await Extintor.find({
+            vfechaFabricacion: { $lt: fechaCorte }
+        });
+        res.status(200).json(extintores);
+    }
+    catch(error){
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+    finally{
+        await client?.close(); 
+    }
+}
+
+>>>>>>> Stashed changes
 module.exports = {
     postExtintor,
     postTipoExtintor,
     getExtintor,
     getTipoExtintor,
     updateExtintor,
+<<<<<<< Updated upstream
     updateTipoExtintor
+=======
+    updateTipoExtintor,
+    listExtintorVencimiento
+>>>>>>> Stashed changes
 }
